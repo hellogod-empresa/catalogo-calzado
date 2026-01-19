@@ -7,7 +7,7 @@ import { supabase } from "@/lib/supabase/client";
 export const metadata = {
   title: "Catálogo de Calzado | Calzado Premium",
   description:
-    "EXPLORAAAAAAA nuestro catálogo de calzado. Compra fácil y rápida por WhatsApp.",
+    "Explora nuestro catálogo de calzado. Compra fácil y rápida por WhatsApp.",
 };
 
 // 🔹 Cliente Supabase (lectura pública)
@@ -114,7 +114,7 @@ export default async function HomePage() {
                 lineHeight: "1.6",
               }}
             >
-              Exploraaaaaa nuestra colección de calzado premium. Estilo, comodidad y
+              Explora nuestra colección de calzado premium. Estilo, comodidad y
               calidad en cada par. Compra fácil y rápida por WhatsApp.
             </p>
 
