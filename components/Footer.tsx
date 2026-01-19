@@ -23,7 +23,7 @@ export default function Footer() {
         {/* ================= LOGO + TEXTO ================= */}
         <div>
           <Image
-            src="/LOGO2.JPG" // asegúrate que esté en /public
+            src="/LOGO2.jpg" // asegúrate que esté en /public
             alt="HelloGod"
             width={160}
             height={90}
