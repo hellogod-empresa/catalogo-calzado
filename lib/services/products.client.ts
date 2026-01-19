@@ -1,4 +1,4 @@
-import { supabaseClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 export async function createProduct(product: {
   name: string;
@@ -7,7 +7,7 @@ export async function createProduct(product: {
   image: string;
   slug?: string | null;
 }) {
-  const { error } = await supabaseClient
+  const { error } = await supabase
     .from("products")
     .insert([product]);
 

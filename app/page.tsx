@@ -1,6 +1,8 @@
 import ProductFilters from "@/components/ProductFilters";
-import { createClient } from "@supabase/supabase-js";
+//import { createClient } from "@supabase/supabase-js";
 import ProductSlider from "@/components/ProductSlider";
+import { supabase } from "@/lib/supabase/client";
+
 
 export const metadata = {
   title: "Catálogo de Calzado | Calzado Premium",
@@ -9,10 +11,11 @@ export const metadata = {
 };
 
 // 🔹 Cliente Supabase (lectura pública)
+/*
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+);*/
 
 export default async function HomePage() {
   const { data: products, error } = await supabase
