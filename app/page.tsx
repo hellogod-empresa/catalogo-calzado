@@ -114,7 +114,7 @@ export default async function HomePage() {
                 lineHeight: "1.6",
               }}
             >
-              Explora nuestra colección de calzado premium. Estilo, comodidad y
+              Exploraaaaaa nuestra colección de calzado premium. Estilo, comodidad y
               calidad en cada par. Compra fácil y rápida por WhatsApp.
             </p>
 
