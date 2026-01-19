@@ -7,7 +7,7 @@ import { supabase } from "@/lib/supabase/client";
 export const metadata = {
   title: "Catálogo de Calzado | Calzado Premium",
   description:
-    "Explora nuestro catálogo de calzado. Compra fácil y rápida por WhatsApp.",
+    "EXPLORAAAAAAA nuestro catálogo de calzado. Compra fácil y rápida por WhatsApp.",
 };
 
 // 🔹 Cliente Supabase (lectura pública)
