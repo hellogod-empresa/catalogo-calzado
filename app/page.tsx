@@ -79,7 +79,7 @@ export default async function HomePage() {
                 marginBottom: "1.5rem",
               }}
             >
-              NUEVA COLECCIÓN
+              NUEVA COLECCIÓNnnn
             </span>
 
             {/* DETALLE DECORATIVO */}
