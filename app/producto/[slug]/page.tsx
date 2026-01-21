@@ -2,7 +2,9 @@ import { createClient } from "@supabase/supabase-js";
 import ProductCard from "@/components/ProductCard";
 import Breadcrumb from "@/components/Breadcrumbs";
 import ProductInfoClient from "@/components/ProductInfoClient";
-import { supabase } from "@/lib/supabase/client";
+//import { supabase } from "@/lib/supabase/client";
+import { supabasePublic } from "@/lib/supabase/public";
+
 
 
 /*
@@ -18,7 +20,7 @@ export default async function ProductPage({
 }) {
   const { slug } = await params;
 
-  const { data: product, error } = await supabase
+  const { data: product, error } = await supabasePublic
     .from("products")
     .select("*")
     .eq("slug", slug)
@@ -32,7 +34,7 @@ export default async function ProductPage({
     );
   }
 
-  const { data: relatedProducts } = await supabase
+  const { data: relatedProducts } = await supabasePublic
     .from("products")
     .select("*")
     .neq("id", product.id)

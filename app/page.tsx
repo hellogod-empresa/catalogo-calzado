@@ -1,7 +1,8 @@
 import ProductFilters from "@/components/ProductFilters";
 //import { createClient } from "@supabase/supabase-js";
 import ProductSlider from "@/components/ProductSlider";
-import { supabase } from "@/lib/supabase/client";
+//import { supabase } from "@/lib/supabase/client";
+import { supabasePublic } from "@/lib/supabase/public";
 
 
 export const metadata = {
@@ -18,7 +19,7 @@ const supabase = createClient(
 );*/
 
 export default async function HomePage() {
-  const { data: products, error } = await supabase
+  const { data: products, error } = await supabasePublic
     .from("products")
     .select("*")
     .order("name");
@@ -79,7 +80,7 @@ export default async function HomePage() {
                 marginBottom: "1.5rem",
               }}
             >
-              NUEVA COLECCIÓNnnn
+              NUEVA COLECCIÓN
             </span>
 
             {/* DETALLE DECORATIVO */}
