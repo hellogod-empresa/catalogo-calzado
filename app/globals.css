@@ -1,217 +1,395 @@
+/* =========================
+   NAVBAR – HELLO GOD
+========================= */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* CONTENEDOR GENERAL */
+
+header {
+   font-family: var(--font-body);
+  position: sticky;        /* o fixed si lo usas así */
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.35s ease, opacity 0.35s ease, background 0.35s ease;
+  will-change: transform;
+}
+
+/* Cuando se oculta */
+header.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0.95;
+}
+
+/* Cuando se muestra */
+header.header-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+header .socials a svg {
+  stroke: #fff;
+}
+
+header .socials a:hover svg {
+  stroke: #ffd400;
+}
+
+
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+
+/* TITULOS – DIVERTIDOS */
+h1,
+h2,
+h3,
+h4,
+.logo-text,
+.title {
+  font-family: var(--font-title);
+  letter-spacing: 0.02em;
+  font-weight: 800;
+}
+
+/* TEXTO NORMAL – LEGIBLE */
+p,
+span,
+li,
+a,
+button {
+  font-family: var(--font-body);
+}
+
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+header .socials {
+  display: flex;
+  gap: 12px;
+}
+
+header .socials a {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+header .socials a:hover {
+  transform: translateY(-2px) scale(1.1);
+  opacity: 1;
+}
+
+/* =========================
+   LOGO HELLO GOD
+========================= */
+.logo-text {
+  font-family: var(--font-title) !important;
+  font-size: 70px;
+  line-height: 1;     /* 🔥 evita que el texto “empuje” la franja */
+    display: inline-block;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #c2185b;
+
+  /* Borde blanco tipo logo */
+  text-shadow:
+    -3px -3px 0 #ffffff,
+     3px -3px 0 #ffffff,
+    -3px  3px 0 #ffffff,
+     3px  3px 0 #ffffff,
+     0px  6px 10px rgba(0,0,0,0.25);
+
+  transition: transform 0.25s ease;
+}
+
+.logo-text:hover {
+  transform: scale(1.04);
+}
+
+/* =========================
+   LINKS INICIO / CATÁLOGO
+========================= */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+
+/* LINK BASE */
+.nav-link {
+   font-family: var(--font-title);
+  position: relative;
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+/* SUBRAYADO DIVERTIDO */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 4px;
+  background: #ffd400;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   BOTÓN WHATSAPP
+========================= */
+.whatsapp-cta {
+  padding: 10px 26px;
+  background: #ffd400;
+  color: #000;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.3);
+}
+
+/* ========================= PRODUCT CARD ========================= */
+ .product-card {
+   background: #ffffff; 
+   border-radius: 18px; 
+   padding: 16px; 
+   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease; 
+    display: flex; flex-direction: column; }
+    
+  .product-card:hover { 
+      transform: translateY(-6px);
+       box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+       
+/* IMAGE */ 
+.image-wrapper { 
+  width: 100%;          /* ← deja que el layout mande */
+  max-width: 420px;     /* ← AQUÍ se controla el tamaño */
+  height: 370px;        /* ← altura realista ecommerce */
+  background: #f6f6f6; 
+  border-radius: 16px; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  margin: 0 auto;       /* ← centra sin romper nada */
+}
+
+ 
+   
+.product-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  
+.product-card:hover img { 
+  transform: scale(1.06);
+ } 
+ 
+ /* TEXT */ 
+.product-card h3 { 
+  font-size: 16px;
+   margin:12px 0 4px;
+   }
+
+.product-card p {
+   font-size: 14px; 
+   color: #666;
+    flex-grow: 1; 
+  } 
+  
+  /* PRICE */ 
+.product-card strong { 
+  font-size: 18px;
+   margin: 8px 0;
+    color: var(--color-dark);
+   } 
+   
+   
+/* BUTTONS */ 
+.details-btn {
+  margin-top: 10px; 
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: #a1a1a148;
+  text-decoration: none; 
+  color: #111; 
+  font-size: 14px; 
+  transition: background 0.2s ease; 
+} 
+
+.details-btn:hover { 
+  background: #929292ab;
+ } 
+ 
+ .whatsapp-btn { 
+  margin-top: 8px;
+  text-align: center; 
+  padding: 12px;
+  border-radius: 12px;
+  background:  #000000; 
+  color: #ffffff;
+   text-decoration: none; 
+   font-size: 14px; }
+    
+    .whatsapp-btn:hover {
+    background: #c2185b
+  } 
+    
+    /* ========================= UTILIDADES ========================= */ 
+    @keyframes pulse { 0% { opacity: 1; } 
+    50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+
+/* =========================
+   RESPONSIVE (BÁSICO)
+========================= */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 38px;
+  }
+
+  .whatsapp-cta {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+}
+
+
 
 html {
   scroll-behavior: smooth;
 }
 
+/* =========================
+   PRODUCT GALLERY (DESKTOP)
+========================= */
+.product-gallery {
+  max-width: 400px;
+}
 
+.product-gallery-main {
+  background: #fff;
+}
+
+.product-gallery-thumbs button {
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.product-gallery-thumbs button:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.product-gallery-thumbs button.border-black {
+  opacity: 1;
+}
+
+
+/* =========================
+   FONDO GENERAL DEL SITIO
+========================= */
 body {
-  background-color: #f5f5f5;
-  color: #111;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  letter-spacing: -0.02em;
-}
-
-header a {
-  color: #e5e5e5;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-header a:hover {
-  color: #ffffff;
+  background-image: url("/fondo.PNG"); /* nombre de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
-header a.cta {
-  background: #fff;
-  color: #000;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 14px;
+/* Capa blanca encima para suavizar (SIN BLUR para evitar lag) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.87),
+    rgba(255, 255, 255, 0.60)
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
-header a.cta:hover {
-  background: #eaeaea;
+main, header, footer {
+  position: relative;
+  z-index: 9;
 }
 
 
-.product-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid #eee;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+
+.product-info-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  max-width: 520px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+
+   border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: 2px solid rgba(255, 47, 146, 0.15);
 }
 
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-.image-wrapper {
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.image-wrapper img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.product-card:hover img {
-  transform: scale(1.08);
-}
-
-.product-card h3 {
-  margin-top: 14px;
-  font-size: 17px;
-}
-
-.product-card p {
-  font-size: 14px;
-  color: #555;
-  margin: 8px 0;
-}
-
-.product-card strong {
-  display: block;
-  font-size: 18px;
-  margin: 12px 0;
-}
-
-.details-btn {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #111;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  transition: background 0.2s ease;
-}
-
-.details-btn:hover {
-  background: #ffffff;
-}
-
-.whatsapp-btn {
-  display: block;
-  text-align: center;
-  padding: 12px;
-  border-radius: 12px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background 0.2s ease;
-}
-
-.whatsapp-btn:hover {
-  background: #000;
+/* Opcional: efecto suave al pasar el mouse */
+.product-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.22);
+  transition: all 0.25s ease;
 }
 
 
 
 
 
-/* PRODUCT CARD */
-.product-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
 
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
 
-/* IMAGE */
-.image-wrapper {
-  overflow: hidden;
-  border-radius: 14px;
-}
 
-.image-wrapper img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
 
-.product-card:hover img {
-  transform: scale(1.06);
-}
 
-/* TEXT */
-.product-card h3 {
-  font-size: 16px;
-  margin: 12px 0 4px;
-}
 
-.product-card p {
-  font-size: 14px;
-  color: #666;
-  flex-grow: 1;
-}
 
-/* PRICE */
-.product-card strong {
-  font-size: 18px;
-  margin: 8px 0;
-}
 
-/* BUTTONS */
-.details-btn {
-  margin-top: 10px;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  background: #f2f2f2;
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  transition: background 0.2s ease;
-}
 
-.details-btn:hover {
-  background: #e5e5e5;
-}
 
-.whatsapp-btn {
-  margin-top: 8px;
-  text-align: center;
-  padding: 12px;
-  border-radius: 12px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-}
 
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
+
 

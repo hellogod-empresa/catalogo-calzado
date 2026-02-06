@@ -100,7 +100,7 @@ export default function ContactoPage() {
 
     {/* Facebook */}
     <a
-      href="https://www.facebook.com/hellogod"
+      href="https://www.facebook.com/hellogod.sas"
       target="_blank"
       rel="noopener noreferrer"
       style={{

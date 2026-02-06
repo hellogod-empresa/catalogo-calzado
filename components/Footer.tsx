@@ -22,18 +22,24 @@ export default function Footer() {
       >
         {/* ================= LOGO + TEXTO ================= */}
         <div>
-          <Image
-            src="/LOGO2.jpg" // asegúrate que esté en /public
-            alt="HelloGod"
-            width={160}
-            height={90}
-            style={{ marginBottom: "1rem" }}
-          />
-          <p style={{ fontSize: "14px", color: "#ccc", lineHeight: "1.6" }}>
-            Calzado diseñado para destacar.  
-            Estilo, carácter y presencia en cada paso.
-          </p>
-        </div>
+  <Image
+    src="/LOGO2.jpg"
+    alt="Hello God"
+    width={160}
+    height={90}
+    style={{ marginBottom: "1rem" }}
+  />
+  <h2 style={{ fontSize: "18px", color: "#fff", marginBottom: "0.5rem" }}>
+    Hello God
+  </h2>
+  <h3 style={{ fontSize: "15px", color: "#fff",lineHeight: "1.6" }}>
+     Pasos felices hechos en Colombia
+  </h3>
+  <p style={{ fontSize: "14px", color: "#ccc", lineHeight: "1.6" }}>
+    Calzado cómodo y de calidad para dama, niña y niño.
+  </p>
+</div>
+
 
         {/* ================= EXPLORAR ================= */}
         <div>
@@ -86,7 +92,7 @@ export default function Footer() {
 
           <div style={{ display: "flex", gap: "1rem" }}>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/hellogod.sas"
               target="_blank"
               style={{ color: "#fff", fontSize: "18px" }}
             >
@@ -94,7 +100,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/hellogod.sas"
               target="_blank"
               style={{ color: "#fff", fontSize: "18px" }}
             >
@@ -102,7 +108,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@hellogod.sas"
               target="_blank"
               style={{ color: "#fff", fontSize: "18px" }}
             >

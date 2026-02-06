@@ -18,7 +18,7 @@ export default function ProductSlider({
     <section style={{ marginTop: "4rem" }}>
       <h2
         style={{
-          fontSize: "26px",
+          fontSize: "34px",
           marginBottom: "1.5rem",
           color: "#111",
         }}
@@ -40,7 +40,7 @@ export default function ProductSlider({
             key={product.id}
             href={`/producto/${product.slug}`}
             style={{
-              minWidth: "260px",
+              minWidth: "300px",
               flex: "0 0 auto",
               scrollSnapAlign: "start",
               textDecoration: "none",
@@ -67,7 +67,7 @@ export default function ProductSlider({
                 style={{
                   width: "100%",
                   height: "260px",
-                  objectFit: "cover",
+                  objectFit: "contain",
                   display: "block",
                 }}
               />

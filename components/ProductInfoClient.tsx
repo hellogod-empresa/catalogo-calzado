@@ -9,7 +9,7 @@ export default function ProductInfoClient({
 }) {
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
 
-  const sizes = [35, 36, 37, 38, 39, 40];
+  const sizes = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,];
 
   return (
     <>
@@ -63,6 +63,7 @@ export default function ProductInfoClient({
         }}
       >
         Comprar por WhatsApp
+        
       </a>
     </>
   );

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import ProductCard from "@/components/ProductCard";
-import ProductCardSkeleton from "@/components/ProductCardSkeleton";
 
 type Product = {
   id: string;
@@ -14,7 +13,7 @@ type Product = {
 };
 
 export default function Catalogo({ products }: { products?: Product[] }) {
-  // 🟡 SKELETON LOADING
+  // 🟡 ESTADO "CARGANDO" SIMPLE (sin skeleton)
   if (!products || products.length === 0) {
     return (
       <section
@@ -25,7 +24,14 @@ export default function Catalogo({ products }: { products?: Product[] }) {
         }}
       >
         {Array.from({ length: 8 }).map((_, i) => (
-          <ProductCardSkeleton key={i} />
+          <div
+            key={i}
+            style={{
+              height: "260px",
+              background: "#f2f2f2",
+              borderRadius: "12px",
+            }}
+          />
         ))}
       </section>
     );

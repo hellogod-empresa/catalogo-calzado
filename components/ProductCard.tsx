@@ -1,39 +1,37 @@
-
-
 "use client";
 
 type Product = {
   id: string;
   name: string;
   description: string | null;
-  image: string;
+  image: string | null;
+  images?: string[] | null;
   price: number;
   slug: string;
 };
 
 export default function ProductCard({ product }: { product: Product }) {
-  return (
+  
+  const mainImage =
+    product.image ||
+    product.images?.[0] ||
+    "/placeholder.png";
+console.log("IMAGEN PRINCIPAL:", mainImage);
 
-    
+  return (
     <div className="product-card">
+      
       <div className="image-wrapper">
-        <img src={product.image} alt={product.name} />
+        <img src={mainImage} alt={product.name} />
       </div>
 
       <h3>{product.name}</h3>
-
       {product.description && <p>{product.description}</p>}
-
       <strong>${product.price}</strong>
 
-      <a
-        href={`/producto/${product.slug}`}
-        className="details-btn"
-      >
+      <a href={`/producto/${product.slug}`} className="details-btn">
         Ver detalles
       </a>
-
-
 
       <a
         href={`https://wa.me/573043545117?text=Hola, estoy interesado en el producto: ${encodeURIComponent(

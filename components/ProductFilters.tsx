@@ -84,7 +84,7 @@ export default function ProductFilters({
           style={{
             display: "grid",
             gridTemplateColumns:
-              "repeat(auto-fill, minmax(260px, 1fr))",
+              "repeat(auto-fill, minmax(280px, 1fr))",
             gap: "32px",
           }}
         >
