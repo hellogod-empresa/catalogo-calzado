@@ -39,7 +39,7 @@ export default function Navbar() {
         zIndex: 100,
 
         /* 🟡 Fondo con imagen */
-        backgroundImage: "url('/FONDO.png')",
+        backgroundImage: "url('public/fondo.png')",
         backgroundSize:"100% auto",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
